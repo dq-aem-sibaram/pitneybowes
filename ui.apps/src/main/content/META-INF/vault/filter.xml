@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/pitneybowes/clientlibs"/>
+    <filter root="/apps/pitneybowes/components"/>
+    <filter root="/apps/pitneybowes/i18n"/>
+    <filter root="/apps/msm/pitneybowes_blueprint" mode="merge"/>
+</workspaceFilter>

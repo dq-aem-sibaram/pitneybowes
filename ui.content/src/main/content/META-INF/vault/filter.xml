@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/pitneybowes" mode="replace"/>
+    <filter root="/content/pitneybowes" mode="merge"/>
+    <filter root="/content/dam/pitneybowes" mode="merge">
+        <exclude pattern="/content/dam/pitneybowes(/.*)?"/>
+        <include pattern="/content/dam/pitneybowes/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/pitneybowes/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/pitneybowes" mode="merge"/>
+</workspaceFilter>
