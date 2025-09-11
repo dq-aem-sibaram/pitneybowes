@@ -1,6 +1,11 @@
-
 <sly data-sly-use.nav="com.adobe.cq.wcm.core.components.models.Navigation">
-  <nav class="mega-nav">
+<sly data-sly-use.model="com.aem.pitneybowes.core.models.PrimarynavbarModel"/>
+<sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
+<!--/* <sly data-sly-test.hasContent="${!model.empty}"> */-->
+  <sly data-sly-test="${model.imagelogo}">
+    <p>Imagelogo: <img src="${model.imagelogo}" alt="Imagelogo" style="max-width:100%; height:auto;"/></p>
+      </sly>
+      <nav class="mega-nav">
     <ul class="mega-nav__list">
       <sly data-sly-list="${nav.items}">
         <li class="mega-nav__item">
@@ -34,6 +39,15 @@
       </sly>
     </ul>
   </nav>
+
+<!--/* </sly> */-->
 </sly>
+
+<!--/* <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" /> */-->
+
+
+
+
+  
  
  
