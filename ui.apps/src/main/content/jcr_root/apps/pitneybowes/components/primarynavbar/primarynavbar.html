@@ -1,0 +1,39 @@
+
+<sly data-sly-use.nav="com.adobe.cq.wcm.core.components.models.Navigation">
+  <nav class="mega-nav">
+    <ul class="mega-nav__list">
+      <sly data-sly-list="${nav.items}">
+        <li class="mega-nav__item">
+          <a href="${item.URL}" class="mega-nav__link mega-nav__toggle">
+            ${item.title}
+          </a>
+ 
+          <!-- Mega Menu Dropdown -->
+          <sly data-sly-test="${item.children && item.children.size > 0}">
+            <div class="mega-nav__dropdown">
+              <div class="mega-nav__columns">
+                <sly data-sly-list.child="${item.children}">
+                  <div class="mega-nav__column">
+                    <h4 class="mega-nav__heading">
+                      <a href="${child.URL}">${child.title}</a>
+                    </h4>
+                    <div class="mega-nav__underline"></div>
+                    <ul class="mega-nav__sublist">
+                      <sly data-sly-list.sub="${child.children}">
+                        <li>
+                          <a href="${sub.URL}" class="mega-nav__sublink">${sub.title}</a>
+                        </li>
+                      </sly>
+                    </ul>
+                  </div>
+                </sly>
+              </div>
+            </div>
+          </sly>
+        </li>
+      </sly>
+    </ul>
+  </nav>
+</sly>
+ 
+ 
