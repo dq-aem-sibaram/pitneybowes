@@ -1,18 +1,21 @@
-<sly data-sly-use.nav="com.adobe.cq.wcm.core.components.models.Navigation">
+<sly data-sly-use.nav="com.adobe.cq.wcm.core.components.models.Navigation"/>
 <sly data-sly-use.model="com.aem.pitneybowes.core.models.PrimarynavbarModel"/>
 <sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
-<!--/* <sly data-sly-test.hasContent="${!model.empty}"> */-->
+
+<sly data-sly-test.hasContent="${model.imagelogo || (nav.items && nav.items.size > 0)}">
+  
   <sly data-sly-test="${model.imagelogo}">
-    <p>Imagelogo: <img src="${model.imagelogo}" alt="Imagelogo" style="max-width:100%; height:auto;"/></p>
-      </sly>
-      <nav class="mega-nav">
+    <p>Imagelogo: 
+      <img src="${model.imagelogo}" alt="Imagelogo" style="max-width:100%; height:auto;"/>
+    </p>
+  </sly>
+
+  <nav class="mega-nav">
     <ul class="mega-nav__list">
       <sly data-sly-list="${nav.items}">
         <li class="mega-nav__item">
-          <a href="${item.URL}" class="mega-nav__link mega-nav__toggle">
-            ${item.title}
-          </a>
- 
+          <a href="${item.URL}" class="mega-nav__link mega-nav__toggle">${item.title}</a>
+
           <!-- Mega Menu Dropdown -->
           <sly data-sly-test="${item.children && item.children.size > 0}">
             <div class="mega-nav__dropdown">
@@ -40,14 +43,7 @@
     </ul>
   </nav>
 
-<!--/* </sly> */-->
 </sly>
 
-<!--/* <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" /> */-->
-
-
-
-
-  
- 
- 
+<!-- Placeholder when empty -->
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" />

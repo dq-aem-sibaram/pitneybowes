@@ -9,21 +9,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class Feature_tileModel {
-
-    @ValueMapValue
-    private String maintitle;
-
-    public String getMaintitle() {
-        return maintitle;
-    }
-
-    @ChildResource
-    private List<Multi> multi;
-
-    public List<Multi> getMulti() {
-        return multi;
-    }
+public class Bottom_footerModel {
 
     @ValueMapValue
     private String description;
@@ -32,15 +18,21 @@ public class Feature_tileModel {
         return description;
     }
 
+    @ChildResource
+    private List<Bottomfooterlist> bottomfooterlist;
+
+    public List<Bottomfooterlist> getBottomfooterlist() {
+        return bottomfooterlist;
+    }
+
     /**
      * Checks if all fields in this model are empty.
      * Used in HTL: ${!model.empty}
      */
     public boolean isEmpty() {
         boolean empty = true;
-        if (maintitle != null && !maintitle.isEmpty()) empty = false;
-        if (multi != null && !multi.isEmpty()) empty = false;
         if (description != null && !description.isEmpty()) empty = false;
+        if (bottomfooterlist != null && !bottomfooterlist.isEmpty()) empty = false;
         return empty;
     }
 }

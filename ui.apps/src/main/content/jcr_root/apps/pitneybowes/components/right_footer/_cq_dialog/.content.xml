@@ -3,7 +3,7 @@
           xmlns:cq="http://www.day.com/jcr/cq/1.0"
           xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="nt:unstructured"
-          jcr:title="feature_tile Dialog"
+          jcr:title="right_footer Dialog"
           sling:resourceType="cq/gui/components/authoring/dialog">
     <content jcr:primaryType="nt:unstructured"
              sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -13,68 +13,65 @@
             <column jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-  <maintitle
+  <logo
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+    autoStart="{Boolean}false"
+    class="cq-droptarget"
+    fieldLabel="Logo"
+    fileNameParameter="./logoFileName"
+    fileReferenceParameter="./logo"
+    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+    multiple="{Boolean}false"
+    name="./file"
+    uploadUrl="/content/dam"/>
+  <homepagelink
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+    fieldLabel="Home_page_link"
+    name="./homepagelink"
+  />
+  <title
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-    fieldLabel="Main_title"
-    name="./maintitle"
+    fieldLabel="Title"
+    name="./title"
   />
-  <multi
+  <iconlist
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-    fieldLabel="Multi"
+    fieldLabel="Icon_list"
     composite="true">
     <field
       jcr:primaryType="nt:unstructured"
       sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
-      name="./multi">
+      name="./iconlist">
         <layout
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
             margin="true"/>
         <items jcr:primaryType="nt:unstructured">
-  <image
+  <iconimage
     jcr:primaryType="nt:unstructured"
     sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
     autoStart="{Boolean}false"
     class="cq-droptarget"
-    fieldLabel="Image"
-    fileNameParameter="./imageFileName"
-    fileReferenceParameter="./image"
+    fieldLabel="Icon_image"
+    fileNameParameter="./iconimageFileName"
+    fileReferenceParameter="./iconimage"
     mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
     multiple="{Boolean}false"
     name="./file"
     uploadUrl="/content/dam"/>
-  <subtitle
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-    fieldLabel="Sub_title"
-    name="./subtitle"
-  />
-  <linkpath
+  <iconlink
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-    fieldLabel="Link_path"
-    name="./linkpath"
-  />
-  <paragraph
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-    fieldLabel="Paragraph"
-    name="./paragraph"
-    useFixedInlineToolbar="true"
-    enableSourceEdit="true"
+    fieldLabel="Icon_link"
+    name="./iconlink"
   />
         </items>
     </field>
-  </multi>
-  <description
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-    fieldLabel="Description"
-    name="./description"
-    rows="5"
-  />
+  </iconlist>
                 </items>
             </column>
         </items>

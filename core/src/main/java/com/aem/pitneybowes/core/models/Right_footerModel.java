@@ -9,27 +9,34 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class Feature_tileModel {
+public class Right_footerModel {
 
     @ValueMapValue
-    private String maintitle;
+    private String logo;
 
-    public String getMaintitle() {
-        return maintitle;
+    public String getLogo() {
+        return logo;
+    }
+
+    @ValueMapValue
+    private String homepagelink;
+
+    public String getHomepagelink() {
+        return homepagelink;
+    }
+
+    @ValueMapValue
+    private String title;
+
+    public String getTitle() {
+        return title;
     }
 
     @ChildResource
-    private List<Multi> multi;
+    private List<Iconlist> iconlist;
 
-    public List<Multi> getMulti() {
-        return multi;
-    }
-
-    @ValueMapValue
-    private String description;
-
-    public String getDescription() {
-        return description;
+    public List<Iconlist> getIconlist() {
+        return iconlist;
     }
 
     /**
@@ -38,9 +45,10 @@ public class Feature_tileModel {
      */
     public boolean isEmpty() {
         boolean empty = true;
-        if (maintitle != null && !maintitle.isEmpty()) empty = false;
-        if (multi != null && !multi.isEmpty()) empty = false;
-        if (description != null && !description.isEmpty()) empty = false;
+        if (logo != null && !logo.isEmpty()) empty = false;
+        if (homepagelink != null && !homepagelink.isEmpty()) empty = false;
+        if (title != null && !title.isEmpty()) empty = false;
+        if (iconlist != null && !iconlist.isEmpty()) empty = false;
         return empty;
     }
 }
