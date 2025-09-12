@@ -4,4 +4,4 @@
           xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="cq:Component"
           jcr:title="promobanner"
-          componentGroup="Pitneybowes"/>
+          componentGroup="Pitneybowes - Content"/>
