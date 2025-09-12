@@ -68,6 +68,13 @@
         </items>
     </field>
   </multi>
+  <description
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+    fieldLabel="Description"
+    name="./description"
+    rows="5"
+  />
                 </items>
             </column>
         </items>
