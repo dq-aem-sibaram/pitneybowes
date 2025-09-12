@@ -4,5 +4,5 @@
           xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="cq:Component"
           jcr:title="primarynavbar"
-          componentGroup="Pitneybowes-Content"
+          componentGroup="Pitneybowes - Content"
           sling:resourceSuperType="core/wcm/components/navigation/v2/navigation"/>
