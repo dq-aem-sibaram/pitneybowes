@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2025-09-12T09:48:01.273+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/pitneybowes/settings/wcm/templates/general-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Home "
+        sling:resourceType="pitneybowes/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="pitneybowes/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pitneybowes/components/container">
+                <hero_banner
+                    jcr:created="{Date}2025-09-12T09:47:13.657+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2025-09-12T09:47:53.326+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="pitneybowes/components/hero_banner"
+                    description="&lt;p>Discover the Pitney Bowes digital stamp duty collections solutions&lt;/p>&#xd;&#xa;"
+                    heading="Shaping the future of stamp duty collection with secure and seamless solutions"
+                    imageurl="/content/dam/pitneybowes/websiteban-desktop.2880.jpeg"
+                    isbuttonrequired="true"
+                    textIsRich="true">
+                    <btn
+                        jcr:lastModified="{Date}2025-09-12T09:48:01.271+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="pitneybowes/components/customisable_button"
+                        buttonText="Learn more"/>
+                </hero_banner>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

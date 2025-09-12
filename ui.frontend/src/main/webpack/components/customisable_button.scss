@@ -1,0 +1,16 @@
+.custom-btn {
+  display: inline-block;
+  background-color: #fff;  /* button background */
+  color: #0073e6;               /* text color */
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+
+}
+
+.custom-btn:hover {
+  background-color: #eceef9; /* darker hover */
+  text-decoration: underline;     /* remove underline on hover */
+}
