@@ -1,35 +1,61 @@
 <sly data-sly-use.nav="com.adobe.cq.wcm.core.components.models.Navigation"/>
 <sly data-sly-use.model="com.aem.pitneybowes.core.models.PrimarynavbarModel"/>
 <sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
+ 
 
-<sly data-sly-test.hasContent="${model.imagelogo || (nav.items && nav.items.size > 0)}">
-  
-  <sly data-sly-test="${model.imagelogo}">
-    <p>Imagelogo: 
-      <img src="${model.imagelogo}" alt="Imagelogo" style="max-width:100%; height:auto;"/>
-    </p>
-  </sly>
+  <!-- Check if logo and nav items exist -->
+  <sly data-sly-test.hasContent="${model.imagelogo || (nav.items && nav.items.size > 0)}">
+    <header class="site-header">
+      <div class="nav-inner">
+        <!-- Logo Section -->
+        <div class="logo">
+          <sly data-sly-test="${model.imagelogo}">
+            <a href="/">
+              <img src="${model.imagelogo}" alt="Site Logo" width="250px" />
+            </a>
+          </sly>
+        </div>
 
-  <nav class="mega-nav">
-    <ul class="mega-nav__list">
-      <sly data-sly-list="${nav.items}">
-        <li class="mega-nav__item">
-          <a href="${item.URL}" class="mega-nav__link mega-nav__toggle">${item.title}</a>
+        <!-- Navigation -->
+        <nav class="mega-nav">
+          <ul class="mega-nav__list">
+            <sly data-sly-list.item="${nav.items}">
+              <li class="mega-nav__item">
+                <a
+                  href="${item.URL}"
+                  class="mega-nav__link"
+                  data-target="panel-${itemList.index}"
+                >
+                  ${item.title}
+                  <img
+                    src="https://img.icons8.com/ios-filled/50/000000/chevron-down.png"
+                    class="dropdown-icon"
+                  />
+                </a>
+              </li>
+            </sly>
+          </ul>
+        </nav>
+      </div>
 
-          <!-- Mega Menu Dropdown -->
-          <sly data-sly-test="${item.children && item.children.size > 0}">
-            <div class="mega-nav__dropdown">
-              <div class="mega-nav__columns">
+      <!-- Dropdown Panels -->
+      <div class="mega-panel">
+        <div class="mega-panel__inner">
+          <sly data-sly-list.item="${nav.items}">
+            <div class="panel-section" id="panel-${itemList.index}">
+              <div class="mega-panel__columns">
                 <sly data-sly-list.child="${item.children}">
-                  <div class="mega-nav__column">
-                    <h4 class="mega-nav__heading">
+                  <div class="mega-panel__column">
+                    <h4 class="mega-panel__heading">
                       <a href="${child.URL}">${child.title}</a>
                     </h4>
-                    <div class="mega-nav__underline"></div>
-                    <ul class="mega-nav__sublist">
+                    <div class="mega-panel__underline"></div>
+                    <ul class="mega-panel__list">
                       <sly data-sly-list.sub="${child.children}">
                         <li>
-                          <a href="${sub.URL}" class="mega-nav__sublink">${sub.title}</a>
+                          <a href="${sub.URL}" class="mega-panel__link"
+                            >${sub.title}</a
+                          >
                         </li>
                       </sly>
                     </ul>
@@ -38,12 +64,12 @@
               </div>
             </div>
           </sly>
-        </li>
-      </sly>
-    </ul>
-  </nav>
-
-</sly>
+        </div>
+      </div>
+    </header>
+  </sly>
 
 <!-- Placeholder when empty -->
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" />
+ 
+ 
