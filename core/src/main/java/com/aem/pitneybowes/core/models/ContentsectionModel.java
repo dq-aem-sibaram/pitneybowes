@@ -9,20 +9,20 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class Feature_tileModel {
+public class ContentsectionModel {
 
     @ValueMapValue
-    private String maintitle;
+    private String contentimage;
 
-    public String getMaintitle() {
-        return maintitle;
+    public String getContentimage() {
+        return contentimage;
     }
 
-    @ChildResource
-    private List<Multi> multi;
+    @ValueMapValue
+    private String title;
 
-    public List<Multi> getMulti() {
-        return multi;
+    public String getTitle() {
+        return title;
     }
 
     @ValueMapValue
@@ -32,15 +32,23 @@ public class Feature_tileModel {
         return description;
     }
 
+    @ValueMapValue
+    private boolean showbutton;
+
+    public boolean isShowbutton() {
+        return showbutton;
+    }
+
     /**
      * Checks if all fields in this model are empty.
      * Used in HTL: ${!model.empty}
      */
     public boolean isEmpty() {
         boolean empty = true;
-        if (maintitle != null && !maintitle.isEmpty()) empty = false;
-        if (multi != null && !multi.isEmpty()) empty = false;
+        if (contentimage != null && !contentimage.isEmpty()) empty = false;
+        if (title != null && !title.isEmpty()) empty = false;
         if (description != null && !description.isEmpty()) empty = false;
+        if (showbutton) empty = false;
         return empty;
     }
 }

@@ -1,7 +1,6 @@
 package com.aem.pitneybowes.core.models;
 
 import java.util.List;
-import javax.inject.Inject;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -9,27 +8,20 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class Feature_tileModel {
+public class Top_footerModel {
 
     @ValueMapValue
-    private String maintitle;
+    private String title;
 
-    public String getMaintitle() {
-        return maintitle;
+    public String getTitle() {
+        return title;
     }
 
     @ChildResource
-    private List<Multi> multi;
+    private List<Topfooterlist> topfooterlist;
 
-    public List<Multi> getMulti() {
-        return multi;
-    }
-
-    @ValueMapValue
-    private String description;
-
-    public String getDescription() {
-        return description;
+    public List<Topfooterlist> getTopfooterlist() {
+        return topfooterlist;
     }
 
     /**
@@ -38,9 +30,8 @@ public class Feature_tileModel {
      */
     public boolean isEmpty() {
         boolean empty = true;
-        if (maintitle != null && !maintitle.isEmpty()) empty = false;
-        if (multi != null && !multi.isEmpty()) empty = false;
-        if (description != null && !description.isEmpty()) empty = false;
+        if (title != null && !title.isEmpty()) empty = false;
+        if (topfooterlist != null && !topfooterlist.isEmpty()) empty = false;
         return empty;
     }
 }

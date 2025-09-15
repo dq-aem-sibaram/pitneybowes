@@ -20,5 +20,8 @@
       </sly>
     </ul>
   </sly>
+  <sly data-sly-test="${model.description}">
+    <p>Description: ${model.description}</p>
+  </sly>
 </sly>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" />

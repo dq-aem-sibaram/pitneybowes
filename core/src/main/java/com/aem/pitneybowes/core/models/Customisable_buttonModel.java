@@ -9,27 +9,20 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class Feature_tileModel {
+public class Customisable_buttonModel {
 
     @ValueMapValue
-    private String maintitle;
+    private String buttonText;
 
-    public String getMaintitle() {
-        return maintitle;
-    }
-
-    @ChildResource
-    private List<Multi> multi;
-
-    public List<Multi> getMulti() {
-        return multi;
+    public String getButtonText() {
+        return buttonText;
     }
 
     @ValueMapValue
-    private String description;
+    private String url;
 
-    public String getDescription() {
-        return description;
+    public String getUrl() {
+        return url;
     }
 
     /**
@@ -38,9 +31,8 @@ public class Feature_tileModel {
      */
     public boolean isEmpty() {
         boolean empty = true;
-        if (maintitle != null && !maintitle.isEmpty()) empty = false;
-        if (multi != null && !multi.isEmpty()) empty = false;
-        if (description != null && !description.isEmpty()) empty = false;
+        if (buttonText != null && !buttonText.isEmpty()) empty = false;
+        if (url != null && !url.isEmpty()) empty = false;
         return empty;
     }
 }

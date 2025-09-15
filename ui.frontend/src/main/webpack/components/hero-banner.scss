@@ -1,0 +1,54 @@
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 50vh;                /* adjust as needed: 60% of viewport height */
+  background-size: cover;      /* fills the area */
+  background-position: 50%; /* centers image */
+  background-repeat: no-repeat;
+  overflow: hidden;
+  color: #fff;                 /* makes text visible */
+}
+
+.hero-banner__content {
+  position: absolute;
+  top: 5%;
+  left: 16%;
+  width: 30%;
+  max-width: 1200px;           /* controls text area width */
+  text-align: left;
+  z-index: 2;
+}
+
+.hero-banner__content h1 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+}
+
+.hero-banner__content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/*  Media Query for Laptop screens */
+@media (max-width: 1024px) {
+  .hero-banner {
+    height: 25vh; /* slightly smaller banner height */
+    background-position: 88%;
+  }
+
+  .hero-banner__content {
+      top: 14%;
+      left: 8%;
+      width:33%;
+    max-width: 900px; /* restrict width for readability */
+    padding: 15px;
+  }
+
+  .hero-banner__content h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-banner__content p {
+    font-size: 1rem;
+  }
+}

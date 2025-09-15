@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root
-    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-    xmlns:cq="http://www.day.com/jcr/cq/1.0"
-    xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:lastModified="{Date}2025-07-21T10:21:18.990+05:30"
+        cq:lastModified="{Date}2025-09-15T12:56:57.773+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/conf/pitneybowes/settings/wcm/templates/smart-access"
         jcr:primaryType="cq:PageContent"
@@ -16,15 +12,27 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="pitneybowes/components/container"
             layout="responsiveGrid">
-            <experiencefragment-header
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="pitneybowes/components/experiencefragment"
-                                    fragmentVariationPath="/content/experience-fragments/pitneybowes/language-masters/en/site/header/master"/>
+            <experiencefragment
+                jcr:created="{Date}2025-09-15T12:52:22.108+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-09-15T12:56:43.240+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pitneybowes/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/pitneybowes/in/en/site/Header/header-v2"/>
             <container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="pitneybowes/components/container"
                 editable="{Boolean}true"
                 layout="responsiveGrid"/>
+            <experiencefragment_1091189020
+                jcr:created="{Date}2025-09-15T12:52:28.638+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2025-09-15T12:56:57.771+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pitneybowes/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/pitneybowes/in/en/site/Footer/footer-v2"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
