@@ -1,0 +1,125 @@
+/* ==============================
+   Cards Container
+   ============================== */
+.cards__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 0px;
+}
+
+/* ==============================
+     Card Wrapper
+     ============================== */
+.cards__item__wrap {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: 390px;
+  font-family: "Precision Sans", "Century Gothic", CenturyGothic, sans-serif;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.cards__item__wrap:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* ==============================
+     Card Image
+     ============================== */
+.cards__image {
+  width: 100%;
+  height: 142px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+/* Image zoom on hover */
+.cards__item__wrap:hover .cards__image {
+  transform: scale(1.225);
+  cursor: pointer;
+  filter: unset;
+  object-fit: cover;
+}
+
+/* ==============================
+     Card Content
+     ============================== */
+.cards__content {
+  padding: 1.5rem 1.25rem;
+}
+
+/* Title */
+.cards__title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #212121;
+  line-height: 1.8125rem;
+  font-family: "Precision Sans", "Century Gothic", CenturyGothic, sans-serif;
+  margin-bottom: 0.75rem;
+}
+
+/* Description */
+.cards__description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4f4f4f;
+  line-height: 1.375rem;
+  letter-spacing: 0.035rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 1rem;
+}
+
+/* ==============================
+     Button
+     ============================== */
+.cards__button a,
+.cards__button button {
+  display: inline-block;
+  padding: 0.55rem 1.3rem;
+  border: 1px solid #004fa3;
+  border-radius: 25px;
+  color: #004fa3;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.cards__button a:hover,
+.cards__button button:hover {
+  background: #eceff9;
+}
+
+/* ==============================
+     Responsive Breakpoints
+     ============================== */
+
+/* Tablet (≤ 1024px) → still 3 per row */
+@media (max-width: 1024px) {
+  .cards__item__wrap {
+    flex: 1 1 calc(33.333% - 20px);
+  }
+}
+
+/* Mobile (≤ 768px) → 1 per row */
+@media (max-width: 768px) {
+  .cards__item__wrap {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .cards__image {
+    width: 100%;
+    height: auto;
+
+  }
+}
