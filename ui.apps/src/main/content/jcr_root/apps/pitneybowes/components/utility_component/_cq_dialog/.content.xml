@@ -19,6 +19,26 @@
     fieldLabel="Maintitle"
     name="./maintitle"
   />
+  <listofchildren
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+    fieldLabel="Listofchildren"
+    composite="true">
+    <field
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+      name="./listofchildren">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
+            margin="true"/>
+        <items jcr:primaryType="nt:unstructured">
+  <subtitle
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+    fieldLabel="Subtitle"
+    name="./subtitle"
+  />
   <children
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
@@ -33,12 +53,6 @@
             sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
             margin="true"/>
         <items jcr:primaryType="nt:unstructured">
-  <title
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-    fieldLabel="Title"
-    name="./title"
-  />
   <linkname
     jcr:primaryType="nt:unstructured"
     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -66,6 +80,9 @@
         </items>
     </field>
   </children>
+        </items>
+    </field>
+  </listofchildren>
                 </items>
             </column>
         </items>

@@ -4,19 +4,23 @@
   <sly data-sly-test="${model.maintitle}">
     <p>Maintitle: ${model.maintitle}</p>
   </sly>
-  <sly data-sly-test="${model.children && model.children.size > 0}">
-    <ul data-sly-list.item="${model.children}">
-      <sly data-sly-test="${item.title}">
-        <p>Title: ${item.title}</p>
+  <sly data-sly-test="${model.listofchildren && model.listofchildren.size > 0}">
+    <ul data-sly-list.item="${model.listofchildren}">
+      <sly data-sly-test="${item.subtitle}">
+        <p>Subtitle: ${item.subtitle}</p>
       </sly>
-      <sly data-sly-test="${item.linkname}">
-        <p>Link_name: ${item.linkname}</p>
-      </sly>
-      <sly data-sly-test="${item.linkpath}">
-        <p>Link_path: <a href="${item.linkpath}">${item.linkpath}</a></p>
-      </sly>
-      <sly data-sly-test="${item.linkimage}">
-        <p>Link_image: <img src="${item.linkimage}" alt="Link_image" style="max-width:100%; height:auto;"/></p>
+      <sly data-sly-test="${item.children}">
+        <ul data-sly-list.nestedItem="${item.children}">
+          <sly data-sly-test="${nestedItem.linkname}">
+            <p>Link_name: ${nestedItem.linkname}</p>
+          </sly>
+          <sly data-sly-test="${nestedItem.linkpath}">
+            <p>Link_path: <a href="${nestedItem.linkpath}">${nestedItem.linkpath}</a></p>
+          </sly>
+          <sly data-sly-test="${nestedItem.linkimage}">
+            <p>Link_image: <img src="${nestedItem.linkimage}" alt="Link_image" style="max-width:100%; height:auto;"/></p>
+          </sly>
+        </ul>
       </sly>
     </ul>
   </sly>
