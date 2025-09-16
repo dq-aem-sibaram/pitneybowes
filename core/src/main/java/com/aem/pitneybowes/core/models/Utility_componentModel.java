@@ -1,7 +1,6 @@
 package com.aem.pitneybowes.core.models;
 
 import java.util.List;
-import javax.inject.Inject;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -19,10 +18,10 @@ public class Utility_componentModel {
     }
 
     @ChildResource
-    private List<Children> children;
+    private List<Listofchildren> listofchildren;
 
-    public List<Children> getChildren() {
-        return children;
+    public List<Listofchildren> getListofchildren() {
+        return listofchildren;
     }
 
     /**
@@ -32,7 +31,7 @@ public class Utility_componentModel {
     public boolean isEmpty() {
         boolean empty = true;
         if (maintitle != null && !maintitle.isEmpty()) empty = false;
-        if (children != null && !children.isEmpty()) empty = false;
+        if (listofchildren != null && !listofchildren.isEmpty()) empty = false;
         return empty;
     }
 }
