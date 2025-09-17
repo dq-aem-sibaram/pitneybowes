@@ -1,0 +1,96 @@
+/* Section background (boxed, not full width) */
+.feature-section {
+  background: linear-gradient(90deg, #2a3d99, #9b1d82);
+  padding: 0rem;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 88pc;   /* keeps it boxed */
+  margin: 0 auto;      /* centers with left/right whitespace */
+}
+
+/* Grid layout */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 1.5rem;
+}
+
+/* Each card */
+.feature-card {
+  display: flex;
+  flex-direction: row;   /* icon left, text right */
+  align-items: center;   /* vertically align icon + text */
+  text-align: left;
+  padding: .1rem 1rem;  /* inner spacing */
+  position: relative;
+}
+
+/* Icon */
+.feature-icon {
+  flex-shrink: 0;       /* prevent icon shrinking */
+  margin-right: 1rem;   /* GAP between icon and text */
+}
+
+.feature-icon img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+/* Text block inside card */
+.feature-content {
+  flex: 1; /* take remaining space */
+}
+
+/* Vertical divider */
+.feature-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 1px;
+  height: 60%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Title */
+.feature-title {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: -10px;
+}
+
+.feature-title a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.feature-title a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;   
+}
+
+/* Description */
+.feature-text {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  .feature-grid {
+    grid-template-columns: 1fr 1fr; /* 2 per row */
+  }
+
+  .feature-card:not(:last-child)::after {
+    display: none; /* remove divider on small screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .feature-grid {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
+}
