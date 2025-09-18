@@ -13,18 +13,36 @@
             <column jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-  <buttonText
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-    fieldLabel="Button text"
-    name="./buttonText"
-  />
-  <url
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-    fieldLabel="Url"
-    name="./url"
-  />
+                    <buttonText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Button text"
+                        name="./buttonText"
+                    />
+                    <url
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Url"
+                        name="./url"
+                    />
+                    <!-- New target select field -->
+                    <target
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Open Link In"
+                        name="./target"
+                        defaultValue="_self">
+                        <items jcr:primaryType="nt:unstructured">
+                            <self
+                                jcr:primaryType="nt:unstructured"
+                                text="Same Tab"
+                                value="_self"/>
+                            <blank
+                                jcr:primaryType="nt:unstructured"
+                                text="New Tab"
+                                value="_blank"/>
+                        </items>
+                    </target>
                 </items>
             </column>
         </items>
