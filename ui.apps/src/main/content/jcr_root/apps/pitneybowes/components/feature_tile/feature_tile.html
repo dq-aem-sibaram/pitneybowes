@@ -1,6 +1,41 @@
 <sly data-sly-use.model="com.aem.pitneybowes.core.models.Feature_tileModel"/>
 <sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
 <sly data-sly-test.hasContent="${!model.empty}">
+
+
+  <section class="feature-section">
+    <sly data-sly-test="${model.multi && model.multi.size > 0}">
+      <div class="feature-grid" data-sly-list.item="${model.multi}">
+
+        <div class="feature-card">
+          
+          <!-- Icon Left -->
+          <sly data-sly-test="${item.image}">
+            <div class="feature-icon">
+              <img src="${item.image}" alt="icon"/>
+            </div>
+          </sly>
+
+          <!-- Text Right -->
+          <sly data-sly-test="${item.subtitle || item.paragraph}">
+            <div class="feature-content">
+              <sly data-sly-test="${item.subtitle}">
+                <h3 class="feature-title">
+                  <a href="${item.linkpath}">${item.subtitle}</a>
+                </h3>
+              </sly>
+
+              <sly data-sly-test="${item.paragraph}">
+                <p class="feature-text">${item.paragraph @ context='html'}</p>
+              </sly>
+            </div>
+          </sly>
+        </div>
+
+      </div>
+    </sly>
+  </section>
+
   <sly data-sly-test="${model.maintitle}">
     <p>Main_title: ${model.maintitle}</p>
   </sly>
@@ -23,5 +58,7 @@
   <sly data-sly-test="${model.description}">
     <p>Description: ${model.description}</p>
   </sly>
+
 </sly>
+
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" />

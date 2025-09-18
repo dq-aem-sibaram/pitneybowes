@@ -1,0 +1,69 @@
+.custom-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.table-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center; /* Centered title like screenshot */
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none; /* No outer border */
+}
+
+.custom-table td {
+  border-bottom: 1px solid #e0e0e0; /* subtle row separators */
+  padding: 0px 0px;
+  font-size: 15px;
+  color: #222;
+  text-align: center; /* default: center all cells */
+  vertical-align: top;
+}
+
+
+/* First column (for all rows including header) */
+.custom-table td:first-child {
+  font-weight: 600;       /* bold like "Specifications" */
+  background: none;
+  width: 220px;
+  text-align: left;       /* only first column left aligned */
+  font-size: 15px;
+}
+
+/* Shadow only below the first border line (after header row) */
+.custom-table tr:first-child {
+  position: relative;
+}
+
+.custom-table tr:first-child td:last-child::after {
+  content: "";
+  position: absolute;
+  bottom: 0px; /* just below border */
+  left: 0;
+  width: 100%;
+  height: 6px;
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.15); /* soft shadow */
+}
+
+/* ========== RESPONSIVENESS ========== */
+
+/* Tablet view (≤ 1024px) */
+@media (max-width: 1024px) {
+  .table-title {
+    font-size: 22px;
+  }
+  .custom-table td {
+    font-size: 14px;
+    padding: 10px 6px;
+  }
+  .custom-table td:first-child {
+    width: 160px;
+  }
+}
+
