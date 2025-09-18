@@ -1,7 +1,6 @@
 package com.aem.pitneybowes.core.models;
 
 import java.util.List;
-import javax.inject.Inject;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -9,7 +8,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class Feature_tileModel {
+public class Utility_componentModel {
 
     @ValueMapValue
     private String maintitle;
@@ -19,17 +18,10 @@ public class Feature_tileModel {
     }
 
     @ChildResource
-    private List<Multi> multi;
+    private List<Listofchildren> listofchildren;
 
-    public List<Multi> getMulti() {
-        return multi;
-    }
-
-    @ValueMapValue
-    private String description;
-
-    public String getDescription() {
-        return description;
+    public List<Listofchildren> getListofchildren() {
+        return listofchildren;
     }
 
     /**
@@ -39,8 +31,7 @@ public class Feature_tileModel {
     public boolean isEmpty() {
         boolean empty = true;
         if (maintitle != null && !maintitle.isEmpty()) empty = false;
-        if (multi != null && !multi.isEmpty()) empty = false;
-        if (description != null && !description.isEmpty()) empty = false;
+        if (listofchildren != null && !listofchildren.isEmpty()) empty = false;
         return empty;
     }
 }

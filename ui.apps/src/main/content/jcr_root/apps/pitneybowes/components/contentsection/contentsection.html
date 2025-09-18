@@ -1,20 +1,33 @@
-<sly data-sly-use.model="com.aem.pitneybowes.core.models.ContentsectionModel"/>
-<sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.aem.pitneybowes.core.models.ContentsectionModel" />
+<sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html" />
 <sly data-sly-test.hasContent="${!model.empty}">
-  <sly data-sly-test="${model.contentimage}">
-    <p>Content-image: <img src="${model.contentimage}" alt="Content-image" style="max-width:100%; height:auto;"/></p>
-  </sly>
-  <sly data-sly-test="${model.title}">
-    <p>Title: ${model.title}</p>
-  </sly>
-  <sly data-sly-test="${model.description}">
-    <p>Description: ${model.description @ context='html'}</p>
-  </sly>
-  <sly data-sly-test="${model.showbutton}">
-    <div style="display:inline-block; transform:scale(0.85); transform-origin: top left;">
-      <sly data-sly-resource="${'button' @ resourceType='pitneybowes/components/customisable_button'}"/>
-    </div>
-  </sly>
+  
+  <!-- Cards Container -->
+  <div class="cards__container">
+    <div class="cards__item__wrap">
+      <!-- Card Image -->
+      <sly data-sly-test="${model.contentimage}">
+        <img src="${model.contentimage}" alt="Content-image" class="cards__image" />
+      </sly>
 
+      <!-- Card Content -->
+      <div class="cards__content">
+        <sly data-sly-test="${model.title}">
+          <h2 class="cards__title">${model.title}</h2>
+        </sly>
+
+        <sly data-sly-test="${model.description}">
+          <p class="cards__description">${model.description @ context='html'}</p>
+        </sly>
+
+        <sly data-sly-test="${model.showbutton}">
+          <div class="cards__button">
+            <sly data-sly-resource="${'button' @ resourceType='pitneybowes/components/customisable_button'}" />
+          </div>
+        </sly>
+      </div>
+    </div>
+  </div>
 </sly>
+
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" />

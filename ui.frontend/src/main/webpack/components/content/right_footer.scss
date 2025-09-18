@@ -1,0 +1,81 @@
+/* ==============================
+   Right Footer Styling
+   ============================== */
+   .right-footer {
+    text-align: center;
+    // padding: 20px;
+    padding: 30px 30px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  
+  /* Logo */
+  .footer-logo__img {
+    max-width: 160px;
+    height: 32px;
+    margin-bottom: 10px;
+    padding-top:15px;
+    display: flex;
+    justify-content:flex-start;
+  }
+  
+  /* Homepage link / tagline */
+  .footer-home-link {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .footer-home-link__anchor {
+    color: #555;
+    text-decoration: none;
+  }
+  
+  .footer-home-link__anchor:hover {
+    text-decoration: underline;
+  }
+  
+  /* Title (e.g. "Follow Us") */
+  .footer-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+    // display: inline-block;
+    padding-bottom: 3px;    
+    width: 138px;
+    display: flex;
+    justify-content:flex-start;
+    padding-left: 5px;
+padding-top: 55px;
+  }
+  
+  /* Social Icons */
+  .footer-social__list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    padding-left: 3px;
+    margin: 15px 0 0 0;
+    list-style: none;
+    
+  }
+  
+  .footer-social__item {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .footer-social__icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    padding: 3px;
+  }
+  
+  .footer-social__link {
+    display: none; /* hide raw links, only icons visible */
+  }
+  

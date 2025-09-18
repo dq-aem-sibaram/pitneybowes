@@ -9,7 +9,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class Feature_tileModel {
+public class Table_componentModel {
 
     @ValueMapValue
     private String maintitle;
@@ -19,17 +19,10 @@ public class Feature_tileModel {
     }
 
     @ChildResource
-    private List<Multi> multi;
+    private List<Row> row;
 
-    public List<Multi> getMulti() {
-        return multi;
-    }
-
-    @ValueMapValue
-    private String description;
-
-    public String getDescription() {
-        return description;
+    public List<Row> getRow() {
+        return row;
     }
 
     /**
@@ -39,8 +32,7 @@ public class Feature_tileModel {
     public boolean isEmpty() {
         boolean empty = true;
         if (maintitle != null && !maintitle.isEmpty()) empty = false;
-        if (multi != null && !multi.isEmpty()) empty = false;
-        if (description != null && !description.isEmpty()) empty = false;
+        if (row != null && !row.isEmpty()) empty = false;
         return empty;
     }
 }

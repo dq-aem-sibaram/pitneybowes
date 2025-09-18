@@ -1,18 +1,24 @@
 <sly data-sly-use.model="com.aem.pitneybowes.core.models.Bottom_footerModel"/>
 <sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
 <sly data-sly-test.hasContent="${!model.empty}">
-  <sly data-sly-test="${model.description}">
-    <p>Description: ${model.description @ context='html'}</p>
-  </sly>
-  <sly data-sly-test="${model.bottomfooterlist && model.bottomfooterlist.size > 0}">
-    <ul data-sly-list.item="${model.bottomfooterlist}">
-      <sly data-sly-test="${item.linkname}">
-        <p>Link_name: ${item.linkname}</p>
-      </sly>
-      <sly data-sly-test="${item.linkpath}">
-        <p>Link_path: <a href="${item.linkpath}">${item.linkpath}</a></p>
-      </sly>
-    </ul>
-  </sly>
+ 
+  <div class="bottom-footer">
+    <sly data-sly-test="${model.bottomfooterlist && model.bottomfooterlist.size > 0}">
+      <ul class="bottom-footer__links" data-sly-list.item="${model.bottomfooterlist}">
+        <sly data-sly-test="${item.linkname}">
+        <!--/* <a class="bottom-footer__anchor" href="${item.linkpath}"> <p class="bottom-footer__link-name">${item.linkname}</p></a> */-->
+        <a class="bottom-footer__anchor" href="${item.linkpath}"> ${item.linkname}</a>
+        </sly>
+        <!--/* <sly data-sly-test="${item.linkpath}">
+          <p class="bottom-footer__link-path">
+            <a class="bottom-footer__anchor" href="${item.linkpath}">${item.linkpath}</a>
+          </p>
+        </sly> */-->
+      </ul>
+    </sly>
+    <sly data-sly-test="${model.description}">
+      <p class="bottom-footer__description">${model.description @ context='html'}</p>
+    </sly>
+  </div>
 </sly>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" />
