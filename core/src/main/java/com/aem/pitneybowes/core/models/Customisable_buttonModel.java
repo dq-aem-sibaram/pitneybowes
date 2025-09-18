@@ -1,12 +1,10 @@
 package com.aem.pitneybowes.core.models;
 
-import java.util.List;
 import javax.inject.Inject;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class Customisable_buttonModel {
@@ -25,6 +23,14 @@ public class Customisable_buttonModel {
         return url;
     }
 
+    // Add target field and getter
+    @ValueMapValue
+    private String target;
+
+    public String getTarget() {
+        return target;
+    }
+
     /**
      * Checks if all fields in this model are empty.
      * Used in HTL: ${!model.empty}
@@ -33,6 +39,7 @@ public class Customisable_buttonModel {
         boolean empty = true;
         if (buttonText != null && !buttonText.isEmpty()) empty = false;
         if (url != null && !url.isEmpty()) empty = false;
+        if (target != null && !target.isEmpty()) empty = false;
         return empty;
     }
 }
