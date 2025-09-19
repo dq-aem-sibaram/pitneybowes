@@ -1,125 +1,150 @@
+body {
+  line-height: 1.2;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 /* ==============================
-   Cards Container
+   Cards Container (Grid Layout)
    ============================== */
 .cards__container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
   justify-content: center;
-  margin-top: 10px;
-  padding: 0px;
+  margin: 20px auto;
+  max-width: 1400px;
+  padding: 0 10px;
 }
-
+#test-id{
+  padding-left: 70px;
+  padding-top: 50px;
+  }
 /* ==============================
-     Card Wrapper
-     ============================== */
+   Card Wrapper (Fixed Height)
+   ============================== */
 .cards__item__wrap {
+  display: flex;
+  flex-direction: column;
+  height: 500px; /* fixed height */
+  border: 1px solid #ddd;
+  border-radius: 8px;
   background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  text-align: center;
-  flex: 1 1 calc(33.333% - 20px);
-  max-width: 390px;
-  font-family: "Precision Sans", "Century Gothic", CenturyGothic, sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s ease;
+  text-align: center;
+  gap: 10px;
 }
 
-/* Hover effect */
 .cards__item__wrap:hover {
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* ==============================
-     Card Image
-     ============================== */
+   Image
+   ============================== */
 .cards__image {
   width: 100%;
-  height: 142px;
+  height: 150px;
   object-fit: cover;
   transition: all 0.5s ease;
 }
 
-/* Image zoom on hover */
-.cards__item__wrap:hover .cards__image {
-  transform: scale(1.225);
-  cursor: pointer;
-  filter: unset;
-  object-fit: cover;
-}
-
 /* ==============================
-     Card Content
-     ============================== */
-.cards__content {
-  padding: 1.5rem 1.25rem;
+   Card Body (content + button)
+   ============================== */
+.cards__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  box-sizing: border-box;
 }
 
 /* Title */
 .cards__title {
-  font-size: 24px;
-  font-weight: 400;
+  font-size: clamp(16px, 2vw, 24px); /* responsive font size */
+  font-weight: 600;
   color: #212121;
-  line-height: 1.8125rem;
-  font-family: "Precision Sans", "Century Gothic", CenturyGothic, sans-serif;
-  margin-bottom: 0.75rem;
+  margin-bottom: 6px;
+  text-align: center;
+  line-height: 1.2;
 }
 
-/* Description */
-.cards__description {
-  font-size: 16px;
+/* Content */
+.cards__content {
+  flex-grow: 1;
+  font-size: clamp(12px, 1.5vw, 16px); /* responsive font size */
   font-weight: 400;
   color: #4f4f4f;
-  line-height: 1.375rem;
-  letter-spacing: 0.035rem;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* max lines to fit card height */
+  -webkit-box-orient: vertical;
 }
 
 /* ==============================
-     Button
-     ============================== */
-.cards__button a,
-.cards__button button {
+   Button zone (fixed at bottom)
+   ============================== */
+.cards__button {
+  margin-top: auto;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.cards__button .custom-btn {
   display: inline-block;
-  padding: 0.55rem 1.3rem;
+  padding: 0.5rem 1.2rem;
   border: 1px solid #004fa3;
   border-radius: 25px;
   color: #004fa3;
-  font-size: 0.9rem;
+  font-size: clamp(12px, 1vw, 14px); /* responsive font size */
   font-weight: 500;
   text-decoration: none;
   background: #fff;
   transition: all 0.3s ease;
 }
 
-.cards__button a:hover,
-.cards__button button:hover {
-  background: #eceff9;
+.cards__button .custom-btn:hover {
+  background-color: #eceef9;
 }
 
 /* ==============================
-     Responsive Breakpoints
-     ============================== */
+   Responsive Tweaks
+   ============================== */
 
-/* Tablet (≤ 1024px) → still 3 per row */
+/* Tablet (≤ 1024px) → 2 per row */
 @media (max-width: 1024px) {
-  .cards__item__wrap {
-    flex: 1 1 calc(33.333% - 20px);
+  .cards__container {
+    grid-template-columns: repeat(1, 1fr);
   }
+
 }
 
 /* Mobile (≤ 768px) → 1 per row */
 @media (max-width: 768px) {
-  .cards__item__wrap {
-    flex: 1 1 100%;
-    max-width: 100%;
+  .cards__container {
+    grid-template-columns: 1fr;
   }
 
   .cards__image {
-    width: 100%;
     height: auto;
-
   }
+  #test-id{
+    padding-left: 0px;
+    }
 }
+@media (max-width: 1440px) and (min-width: 1025px) {
+  .cards__content {
+    font-size: 14px; /* slightly smaller on medium laptops */
+  }
+
+  .cards__title {
+    font-size: 20px; /* optional: adjust title if needed */
+  }
+
+}  
