@@ -1,0 +1,65 @@
+.resources-wrapper {
+  padding: 40px;
+  background: linear-gradient(to bottom, #3056d3, #243a7b); /* blue gradient */
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.resources-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.resources-grid {
+  display: flex;
+  flex-wrap: wrap;         /* allow items to wrap into rows */
+//   justify-content: space-between;
+  gap: 20px;
+}
+
+.resources-column {
+//   flex: 1 1 calc(25% - 20px);  /* 4 columns, subtracting gap */
+  min-width: 200px;            /* prevents shrinking too much */
+}
+
+.resources-column h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.resources-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.resources-column li {
+  margin-bottom: 10px;
+}
+
+.resources-column a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.resources-column a:hover {
+  text-decoration: none;
+}
+
+.link-icon {
+  width: 20px;
+  height: auto;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+
+/* Tablet: 2 columns */
+@media (max-width: 768px) {
+  .resources-column {
+    flex: 1 1 calc(50% - 20px);  /* 2 equal columns */
+  }
+}
