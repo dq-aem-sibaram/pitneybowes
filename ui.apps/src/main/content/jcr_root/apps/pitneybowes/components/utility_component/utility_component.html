@@ -1,28 +1,30 @@
 <sly data-sly-use.model="com.aem.pitneybowes.core.models.Utility_componentModel"/>
 <sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
 <sly data-sly-test.hasContent="${!model.empty}">
-  <sly data-sly-test="${model.maintitle}">
-    <p>Maintitle: ${model.maintitle}</p>
-  </sly>
-  <sly data-sly-test="${model.listofchildren && model.listofchildren.size > 0}">
-    <ul data-sly-list.item="${model.listofchildren}">
-      <sly data-sly-test="${item.subtitle}">
-        <p>Subtitle: ${item.subtitle}</p>
+
+  <div class="resources-wrapper">
+    <h2 class="resources-title">${model.maintitle}</h2>
+
+    <div class="resources-grid">
+      <sly data-sly-list.item="${model.listofchildren}">
+        <div class="resources-column">
+          <h3 class="resources-subtitle">${item.subtitle}</h3>
+          <ul>
+            <sly data-sly-list.nestedItem="${item.children}">
+              <li>
+                <a href="${nestedItem.linkpath}">
+                  ${nestedItem.linkname}
+                  <sly data-sly-test="${nestedItem.linkimage}">
+                    <img src="${nestedItem.linkimage}" alt="icon" class="link-icon"/>
+                  </sly>
+                </a>
+              </li>
+            </sly>
+          </ul>
+        </div>
       </sly>
-      <sly data-sly-test="${item.children}">
-        <ul data-sly-list.nestedItem="${item.children}">
-          <sly data-sly-test="${nestedItem.linkname}">
-            <p>Link_name: ${nestedItem.linkname}</p>
-          </sly>
-          <sly data-sly-test="${nestedItem.linkpath}">
-            <p>Link_path: <a href="${nestedItem.linkpath}">${nestedItem.linkpath}</a></p>
-          </sly>
-          <sly data-sly-test="${nestedItem.linkimage}">
-            <p>Link_image: <img src="${nestedItem.linkimage}" alt="Link_image" style="max-width:100%; height:auto;"/></p>
-          </sly>
-        </ul>
-      </sly>
-    </ul>
-  </sly>
+    </div>
+  </div>
+
 </sly>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" />
