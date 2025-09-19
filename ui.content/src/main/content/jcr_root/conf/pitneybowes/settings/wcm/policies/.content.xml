@@ -34,9 +34,9 @@
                     jcr:title="Content Image"
                     sling:resourceType="wcm/core/components/policy/policy"
                     allowedRenditionWidths="[320,480,600,800,1024,1200,1600]"
-                    disableLazyLoading="false"
                     allowUpload="false"
                     altValueFromDAM="true"
+                    disableLazyLoading="false"
                     displayPopupTitle="true"
                     isDecorative="false"
                     jpegQuality="{Long}85"
@@ -303,6 +303,17 @@
                         </assetToComponentMapping>
                     </cq:authoring>
                 </policy_1575040440977>
+                <policy_1758256539672
+                    jcr:lastModified="{Date}2025-09-19T15:19:58.958+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Container_backgroundColor"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    backgroundColorEnabled="true"
+                    components="group:Pitneybowes - Content"
+                    layoutDisabled="false">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </policy_1758256539672>
             </container>
             <teaser jcr:primaryType="nt:unstructured">
                 <policy_1575031387650
