@@ -9,7 +9,7 @@
       <ul class="top-footer__links" data-sly-list.item="${model.topfooterlist}">
         <li class="top-footer__item">
           <sly data-sly-test="${item.linkname}">
-            <a href="${item.linkpath}" class="top-footer__link">${item.linkname}</a>
+            <a href="${item.linkpath  @ extension='html'}" class="top-footer__link">${item.linkname}</a>
           </sly>
         </li>
       </ul>
