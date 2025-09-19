@@ -1,0 +1,54 @@
+/* Wrapper styling */
+.customisable-title-wrapper {
+  background: linear-gradient(135deg, #4151a2, #951275); /* gradient similar to image */
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px; /* spacing around content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Title */
+.customisable-title-wrapper p:first-of-type {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Description */
+.customisable-title-wrapper p:last-of-type {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+/* Button wrapper */
+.customisable-title-wrapper div {
+  display: flex;
+  justify-content: center;
+}
+
+/* Button styling */
+.customisable-title-wrapper .cmp-button,
+.customisable-title-wrapper button,
+.customisable-title-wrapper a {
+  background-color: #e81998; /* pink button */
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 25px; /* rounded pill style */
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.customisable-title-wrapper .cmp-button:hover,
+.customisable-title-wrapper button:hover,
+.customisable-title-wrapper a:hover {
+  background-color: #c2185b; /* darker on hover */
+}
