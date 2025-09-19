@@ -12,13 +12,13 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/core/components/policies/mapping">
             <container
-                cq:policy="pitneybowes/components/container/policy_1758256539672"
+                cq:policy="pitneybowes/components/container/policy_1574695586800"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/core/components/policies/mapping">
                 <pitneybowes jcr:primaryType="nt:unstructured">
                     <components jcr:primaryType="nt:unstructured">
                         <container
-                            cq:policy="pitneybowes/components/container/policy_1758256539672"
+                            cq:policy="pitneybowes/components/container/policy_12035029559333"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="wcm/core/components/policies/mapping"/>
                     </components>
