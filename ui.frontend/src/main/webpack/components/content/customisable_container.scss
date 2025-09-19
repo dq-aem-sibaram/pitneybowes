@@ -1,0 +1,15 @@
+.customisable-container {
+  background-color: #F8F8F8;
+  padding: 2rem 1rem;
+}
+
+.customisable-container .aem-Grid {
+  display: flex;
+  justify-content: center;  /* or space-between / space-around */
+  gap: 2rem; /* spacing between cards */
+}
+
+.customisable-container .aem-Grid > .contentsection {
+  flex: 1; /* make all 3 take equal space */
+  min-width: 250px; /* responsive fallback */
+}
