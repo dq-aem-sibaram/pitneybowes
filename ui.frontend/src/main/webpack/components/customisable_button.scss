@@ -14,3 +14,6 @@
   background-color: #eceef9; /* darker hover */
   text-decoration: underline;     /* remove underline on hover */
 }
+.custom-btn .cmp-link__screen-reader-only {
+  display: none !important;
+}

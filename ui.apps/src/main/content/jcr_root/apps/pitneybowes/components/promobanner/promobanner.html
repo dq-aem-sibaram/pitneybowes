@@ -1,19 +1,54 @@
-<sly data-sly-use.model="com.aem.pitneybowes.core.models.PromobannerModel"/>
-<sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
+<sly data-sly-use.model="com.aem.pitneybowes.core.models.PromobannerModel" />
+<sly
+  data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+/>
 <sly data-sly-test.hasContent="${!model.empty}">
-  <sly data-sly-test="${model.promobannerimage}">
-    <p>Promo-banner-image: <img src="${model.promobannerimage}" alt="Promo-banner-image" style="max-width:100%; height:auto;"/></p>
-  </sly>
-  <sly data-sly-test="${model.title}">
-    <p>Title: ${model.title}</p>
-  </sly>
-  <sly data-sly-test="${model.description}">
-    <p>Description: ${model.description @ context='html'}</p>
-  </sly>
-  <sly data-sly-test="${model.showbutton}">
-    <div style="display:inline-block; transform:scale(0.85); transform-origin: top left;">
-      <sly data-sly-resource="${'button' @ resourceType='pitneybowes/components/customisable_button'}"/>
+  <section class="promo-banner">
+    <div class="promo-banner__container">
+      <!-- Left Image with Centered Dynamic Button -->
+      <div class="promo-banner__image-wrap">
+        <sly data-sly-test="${model.promobannerimage}">
+          <img
+            src="${model.promobannerimage}"
+            alt="Promo-banner-image"
+            class="promo-banner__image"
+          />
+        </sly>
+        <sly data-sly-test="${model.showbutton}">
+          <div class="promo-banner__button-center">
+            <div class="promo-banner__video-btn">
+          
+              <sly
+                data-sly-resource="${'button' @ resourceType='pitneybowes/components/customisable_button'}"
+              />
+
+              <span class="promo-banner__btn-icon">▶</span>
+            </div>
+          </div>
+        </sly>
+      </div>
+
+      <!-- Right Content -->
+      <div class="promo-banner__content">
+        <sly data-sly-test="${model.title}">
+          <h2 class="promo-banner__title">${model.title}</h2>
+        </sly>
+
+        <sly data-sly-test="${model.description}">
+          <div class="promo-banner__description">
+            ${model.description @ context='html'}
+          </div>
+        </sly>
+
+        <ul class="promo-banner__list">
+          <sly data-sly-list.items="${model.featurelist}">
+            <li class="promo-banner__list-item">${items }</li>
+          </sly>
+        </ul>
+      </div>
     </div>
-  </sly>
+  </section>
 </sly>
-<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" />
+<sly
+  data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}"
+/>
