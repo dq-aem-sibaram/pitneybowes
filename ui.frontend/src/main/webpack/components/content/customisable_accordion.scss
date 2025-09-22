@@ -1,0 +1,101 @@
+/* Accordion wrapper */
+.customised-accordion .cmp-accordion {
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* Accordion header */
+.customised-accordion .cmp-accordion__header {
+  margin: 0;
+}
+
+/* Accordion button (collapsed state) */
+.customised-accordion .cmp-accordion__button {
+  width: 100%;
+  padding: 15px 20px;
+  text-align: left;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+/* Expanded state header */
+.customised-accordion .cmp-accordion__button[aria-expanded="true"] {
+  background: #e6f0fa; /* light blue background */
+//   border-color: #0a3a82;
+}
+
+/* Title text */
+.customised-accordion .cmp-accordion__title {
+  flex: 1;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Arrow icon */
+.customised-accordion .cmp-accordion__icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #0a3a82;
+  border-bottom: 2px solid #0a3a82;
+  transform: rotate(45deg); /* default down arrow */
+  margin-left: 10px;
+//   transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Rotate arrow when expanded */
+.customised-accordion .cmp-accordion__button[aria-expanded="true"] .cmp-accordion__icon {
+  transform: rotate(-135deg); /* up arrow */
+}
+
+/* Accordion panel (collapsed by default) */
+.customised-accordion .cmp-accordion__panel {
+  padding: 15px 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+
+/* Hidden state */
+.customised-accordion .cmp-accordion__panel--hidden {
+  display: none;
+}
+
+/* Accordion item wrapper */
+.customised-accordion .cmp-accordion__item {
+  margin-bottom: 12px; /* spacing between items */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Remove last item’s extra spacing */
+.customised-accordion .cmp-accordion__item:last-child {
+  margin-bottom: 0;
+}
+
+/* Hover styles ONLY when accordion is not expanded */
+.customised-accordion .cmp-accordion__button[aria-expanded="false"]:hover {
+  background: #f5faff;        /* light blue background */
+  border-color: #0a3a82;      /* blue border */
+}
+
+.customised-accordion .cmp-accordion__button[aria-expanded="false"]:hover .cmp-accordion__title {
+  text-decoration: underline;
+  color: #0a3a82;
+}
+
+.customised-accordion .cmp-accordion__button[aria-expanded="false"]:hover .cmp-accordion__icon {
+  border-right-color: #0a3a82;
+  border-bottom-color: #0a3a82;
+}
