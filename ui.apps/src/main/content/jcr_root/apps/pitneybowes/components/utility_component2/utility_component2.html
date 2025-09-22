@@ -1,15 +1,25 @@
 <sly data-sly-use.model="com.aem.pitneybowes.core.models.Utility_component2Model"/>
 <sly data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"/>
+
 <sly data-sly-test.hasContent="${!model.empty}">
-  <sly data-sly-test="${model.maintitle}">
-    <p>Maintitle: ${model.maintitle}</p>
-  </sly>
-  <sly data-sly-test="${model.multichild && model.multichild.size > 0}">
-    <ul data-sly-list.item="${model.multichild}">
-      <sly data-sly-test="${item.paragraph}">
-        <p>Paragraph: ${item.paragraph @ context='html'}</p>
+  <div class="utility-component">
+
+    <!-- Main Title -->
+    <sly data-sly-test="${model.maintitle}">
+      <h2 class="utility-component__title">${model.maintitle}</h2>
+    </sly>
+
+    <!-- Columns Wrapper -->
+    <div class="utility-component__columns">
+      <sly data-sly-list.item="${model.multichild}">
+        <div class="utility-component__col">
+          ${item.paragraph @ context='html'}
+        </div>
       </sly>
-    </ul>
-  </sly>
+    </div>
+
+  </div>
+
+  <!-- Placeholder Template Call -->
+  <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" />
 </sly>
-<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty = !hasContent}" />
